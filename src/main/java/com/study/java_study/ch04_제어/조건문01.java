@@ -6,7 +6,7 @@ public class 조건문01 {
         - 조건문
         1. if, else if, else
         2. switch, case, default
-        3. continue, break
+        3. while, continue, break
          */
 
         if(false) {
