@@ -19,5 +19,6 @@ public class 입력01 {
         System.out.print("b : ");
         String b = scanner.nextLine();
         System.out.println("비 : " + b);
+
     }
 }
