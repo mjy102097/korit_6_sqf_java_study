@@ -149,4 +149,32 @@ public class BookRepository {
     }
 
 
+    private int indexOfBookId(int bookId) {
+        int findIndex = -1;
+        for(int i = 0; i < books.length; i++) {
+            if(books[i].getBookId() == bookId) {
+                findIndex = i;
+                break;
+            }
+        }
+        return findIndex;
+    }
+
+    // 도서 삭제
+    public void deleteBookByBookId(int bookId) {
+        int findIndex = indexOfBookId(bookId);
+        BookEntity[] newBooks = new BookEntity[books.length - 1];
+
+
+        for(int i = 0; i < newBooks.length; i++) {
+            if(i < findIndex) {
+                newBooks[i] = books[i];
+                continue;
+            }
+            newBooks[i] = books[i + 1];
+        }
+        books = newBooks;
+    }
+
+
 }
