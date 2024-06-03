@@ -12,18 +12,25 @@ public class BookService {
     }
 
     private String selectMenu() {
-        String menus = "1234q";
+        String[] menus = {"1", "2", "3", "4", "q"};
         String selectedMenu = null;
+        int t = -1;
 
         while(true) {
             System.out.print("메뉴 선택: ");
             selectedMenu = scanner.nextLine();
-            if(menus.contains(selectedMenu)){
-                break;
+            for(int i = 0; i < menus.length; i++) {
+                if(menus[i].equals(selectedMenu)) {
+                    t = 1;
+                    break;
+                }
             }
-            System.out.println("잘못된 입력입니다. 다시 입력하세요.");
+            if(t == 1) {
+                break;
+            } else {
+                System.out.println("잘못된 입력입니다. 다시 입력하세요.");
+            }
         }
-
         return selectedMenu;
     }
 
